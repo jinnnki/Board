@@ -1,0 +1,26 @@
+server:
+  port: 9001
+  error:
+    whitelabel:
+      enabled: false
+  tomcat:
+    uri-encoding: utf-8
+spring:
+  application:
+    name: board-api
+  mvc:
+    throw-exception-if-no-handler-found: true
+  web:
+    resources:
+      add-mappings: false
+  datasource:
+    url: jdbc:mysql://ec2-3-36-128-148.ap-northeast-2.compute.amazonaws.com:3306/Board?characterEncoding=UTF-8&serverTimezone=UTC
+    username: jeong
+    password: 비밀번호
+    hikari:
+      maximum-pool-size: 5
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update #JAVA의 Entity를 참고하여, Spring Boot 실행 시점에 자동으로 필요한 데이터베이스의 테이블 설정을 자동으로 해줍니다.
+    show-sql: true
